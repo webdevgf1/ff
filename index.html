@@ -118,6 +118,11 @@
             }
         }
         
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.05); }
+        }
+        
         .main-text {
             font-size: 80px;
             font-weight: bold;
@@ -260,6 +265,10 @@
         .section:nth-child(7) .animal-container:nth-child(2) { bottom: 35%; right: 15%; }
         .section:nth-child(7) .animal-container:nth-child(3) { top: 65%; left: 65%; }
         
+        .section:nth-child(8) .animal-container:nth-child(1) { top: 20%; left: 15%; }
+        .section:nth-child(8) .animal-container:nth-child(2) { bottom: 25%; right: 20%; }
+        .section:nth-child(8) .animal-container:nth-child(3) { top: 70%; left: 75%; }
+        
         .crypto-text {
             color: #ffd700;
             font-size: 24px;
@@ -296,7 +305,7 @@
         </div>
         <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/6834b99fe03a70165617c17b_c2e638163c830cd682928efe20d86f88.gif" alt="Random" class="random-gif" style="width: 100px; height: 100px; top: 20%; right: 10%;">
         <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/6830b00ca1fc1e5fa5d4ee99_9on7mkilfz091.gif" alt="Random" class="random-gif" style="width: 80px; height: 80px; bottom: 30%; left: 20%;">
-        <div class="price-tag">$3.99</div>
+        <div class="price-tag">LIVE</div>
         <div class="barcode">|||||| 123456789012</div>
     </div>
 
@@ -424,6 +433,27 @@
         <div class="price-tag">$∞</div>
         <div class="barcode">|||||| CHAOS123456</div>
         <div class="crypto-text">HODL FOREVER 💎🙌</div>
+    </div>
+    <!-- Section 8: Contract Address -->
+    <div class="section">
+        <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/686c37d0a1f8500d533880af_schizocorp-logo_banner5_2.abf1041390748b806d4c.gif" alt="CA Background" class="background-gif">
+        <div class="content-overlay">
+            <div class="main-text">CONTRACT</div>
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_22" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_23" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_24" alt="Animal" class="animal-img">
+        </div>
+        <img src="PLACEHOLDER_CA_IMAGE" alt="Contract Address" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: auto; z-index: 20; border-radius: 15px; animation: pulse 2s ease-in-out infinite;">
+        <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/6834b9c86afb796987e7d7e7_2429514_e59a3.gif" alt="Random" class="random-gif" style="width: 100px; height: 100px; top: 15%; left: 10%;">
+        <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/6830afa3e60995d502452f9e_200w.gif" alt="Random" class="random-gif" style="width: 85px; height: 85px; bottom: 20%; right: 15%;">
+        <div class="crypto-text">CA READY 🚀</div>
+        <div class="twitter-handle">@INFINIFOX</div>
     </div>
 </body>
 </html>
