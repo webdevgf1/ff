@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schizo Sections</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            overflow-x: hidden;
+        }
+        
+        .section {
+            width: 100vw;
+            height: 200px;
+            position: relative;
+            border-bottom: 5px solid gold;
+            overflow: hidden;
+        }
+        
+        .background-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        
+        .content-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .animal-container {
+            position: absolute;
+            z-index: 20;
+        }
+        
+        .animal-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            object-fit: cover;
+            animation: float 2s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .main-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 3px 3px 0px #000, -3px -3px 0px #000, 3px -3px 0px #000, -3px 3px 0px #000;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .japanese-text {
+            font-family: 'MS Gothic', monospace;
+            color: #ff69b4;
+            font-size: 24px;
+            text-shadow: 2px 2px 0px #000;
+        }
+        
+        .glitch-text {
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            font-size: 20px;
+            text-shadow: 2px 2px 0px #000;
+            animation: glitch 0.3s infinite;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        
+        .price-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: yellow;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 18px;
+            z-index: 30;
+        }
+        
+        .barcode {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: white;
+            color: black;
+            padding: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            z-index: 30;
+        }
+        
+        /* Specific positioning for animals in each section */
+        .section:nth-child(1) .animal-container:nth-child(1) { top: 20px; left: 10%; }
+        .section:nth-child(1) .animal-container:nth-child(2) { top: 80px; right: 15%; }
+        .section:nth-child(1) .animal-container:nth-child(3) { bottom: 20px; left: 70%; }
+        
+        .section:nth-child(2) .animal-container:nth-child(1) { top: 10px; right: 20%; }
+        .section:nth-child(2) .animal-container:nth-child(2) { bottom: 30px; left: 20%; }
+        .section:nth-child(2) .animal-container:nth-child(3) { top: 60px; left: 60%; }
+        
+        .section:nth-child(3) .animal-container:nth-child(1) { top: 30px; left: 80%; }
+        .section:nth-child(3) .animal-container:nth-child(2) { bottom: 20px; right: 25%; }
+        .section:nth-child(3) .animal-container:nth-child(3) { top: 10px; left: 30%; }
+        
+        .section:nth-child(4) .animal-container:nth-child(1) { bottom: 10px; left: 10%; }
+        .section:nth-child(4) .animal-container:nth-child(2) { top: 20px; right: 30%; }
+        .section:nth-child(4) .animal-container:nth-child(3) { bottom: 60px; left: 50%; }
+        
+        .section:nth-child(5) .animal-container:nth-child(1) { top: 40px; left: 20%; }
+        .section:nth-child(5) .animal-container:nth-child(2) { bottom: 10px; right: 10%; }
+        .section:nth-child(5) .animal-container:nth-child(3) { top: 10px; left: 70%; }
+        
+        .section:nth-child(6) .animal-container:nth-child(1) { bottom: 30px; left: 15%; }
+        .section:nth-child(6) .animal-container:nth-child(2) { top: 15px; right: 20%; }
+        .section:nth-child(6) .animal-container:nth-child(3) { bottom: 10px; right: 60%; }
+        
+        .section:nth-child(7) .animal-container:nth-child(1) { top: 20px; left: 25%; }
+        .section:nth-child(7) .animal-container:nth-child(2) { bottom: 40px; right: 15%; }
+        .section:nth-child(7) .animal-container:nth-child(3) { top: 80px; left: 65%; }
+        
+        .crypto-text {
+            color: #ffd700;
+            font-size: 16px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px #000;
+        }
+        
+        .twitter-handle {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            color: #1da1f2;
+            font-size: 14px;
+            z-index: 30;
+        }
+    </style>
+</head>
+<body>
+    <!-- Section 1: Rainbow Puke -->
+    <div class="section">
+        <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/686c37f95e2ee4b46b29ffef_RAINBOW_PUKE%20(1).gif" alt="Rainbow Puke" class="background-gif">
+        <div class="content-overlay">
+            <div class="main-text">PURRCY</div>
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_1" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_2" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_3" alt="Animal" class="animal-img">
+        </div>
+        <div class="price-tag">$3.99</div>
+        <div class="barcode">|||||| 123456789012</div>
+    </div>
+
+    <!-- Section 2: Trippy Geometric -->
+    <div class="section">
+        <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/686c37d04a2130e39947bc5c_96db49ce0562356f4ce791e93eeba20e.gif" alt="Geometric Trip" class="background-gif">
+        <div class="content-overlay">
+            <div class="japanese-text">狂気の世界</div>
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_4" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_5" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_6" alt="Animal" class="animal-img">
+        </div>
+        <div class="twitter-handle">@YOURHANDLE</div>
+    </div>
+
+    <!-- Section 3: Dark Edgy -->
+    <div class="section">
+        <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/686c37d03be65e944bf02d6c_edgy-alternative-dark-Favim.com-6719561.gif" alt="Dark Edgy" class="background-gif">
+        <div class="content-overlay">
+            <div class="main-text">DARK REALM</div>
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_7" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_8" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_9" alt="Animal" class="animal-img">
+        </div>
+        <div class="crypto-text">EMBRACE THE VOID 🖤</div>
+    </div>
+
+    <!-- Section 4: Fucked Up -->
+    <div class="section">
+        <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/686c37d0e0fbebe41ec6ff76_FUCKEDUPGIF_01.gif" alt="Fucked Up" class="background-gif">
+        <div class="content-overlay">
+            <div class="glitch-text">FUCKED UP</div>
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_10" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_11" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_12" alt="Animal" class="animal-img">
+        </div>
+        <div class="barcode">|||||| 987654321098</div>
+    </div>
+
+    <!-- Section 5: Glitch Hell -->
+    <div class="section">
+        <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/686c37d04a2130e39947bb9d_tumblr_0ba5ca5993f988676139e1b26a3d2047_433fb7b1_500.gif" alt="Glitch Hell" class="background-gif">
+        <div class="content-overlay">
+            <div class="japanese-text">地獄モード</div>
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_13" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_14" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_15" alt="Animal" class="animal-img">
+        </div>
+        <div class="price-tag">$6.66</div>
+    </div>
+
+    <!-- Section 6: Schizo Corp -->
+    <div class="section">
+        <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/686c37d0a1f8500d533880af_schizocorp-logo_banner5_2.abf1041390748b806d4c.gif" alt="Schizo Corp" class="background-gif">
+        <div class="content-overlay">
+            <div class="main-text">SCHIZO CORP</div>
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_16" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_17" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_18" alt="Animal" class="animal-img">
+        </div>
+        <div class="twitter-handle">@SCHIZOCORP</div>
+    </div>
+
+    <!-- Section 7: Final Chaos (using first gif again for loop) -->
+    <div class="section">
+        <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/686c37f95e2ee4b46b29ffef_RAINBOW_PUKE%20(1).gif" alt="Rainbow Puke Return" class="background-gif">
+        <div class="content-overlay">
+            <div class="glitch-text">INFINITE LOOP</div>
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_19" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_20" alt="Animal" class="animal-img">
+        </div>
+        <div class="animal-container">
+            <img src="PLACEHOLDER_ANIMAL_21" alt="Animal" class="animal-img">
+        </div>
+        <div class="price-tag">$∞</div>
+        <div class="barcode">|||||| CHAOS123456</div>
+        <div class="crypto-text">HODL FOREVER 💎🙌</div>
+    </div>
+</body>
+</html>
