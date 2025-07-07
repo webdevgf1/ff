@@ -54,8 +54,8 @@
         }
         
         .animal-img {
-            width: 120px;
-            height: 120px;
+            width: 180px;
+            height: 180px;
             border: none;
             object-fit: contain;
             animation: float 2s ease-in-out infinite;
@@ -221,17 +221,21 @@
             100% { transform: translate(0); }
         }
         
-        .price-tag {
+        .twitter-link {
             position: absolute;
             top: 20px;
             right: 20px;
-            background: yellow;
-            color: black;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 24px;
             z-index: 30;
+            transition: transform 0.3s ease;
+        }
+        
+        .twitter-link:hover {
+            transform: scale(1.1);
+        }
+        
+        .twitter-image {
+            width: 80px;
+            height: auto;
         }
         
         .crypto-text {
@@ -294,7 +298,9 @@
         </div>
         <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/6834b99fe03a70165617c17b_c2e638163c830cd682928efe20d86f88.gif" alt="Random" class="random-gif" style="width: 100px; height: 100px; top: 20%; right: 10%;">
         <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/6830b00ca1fc1e5fa5d4ee99_9on7mkilfz091.gif" alt="Random" class="random-gif" style="width: 80px; height: 80px; bottom: 30%; left: 20%;">
-        <div class="price-tag">LIVE</div>
+        <a href="https://twitter.com/infinifox" target="_blank" class="twitter-link">
+            <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/686c41c94e68bde70052667b_TWITTER-X-07-07-2025.png" alt="Twitter/X" class="twitter-image">
+        </a>
     </div>
 
     <!-- Section 2: Trippy Geometric -->
@@ -433,7 +439,7 @@
         <div class="animal-container">
             <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=300&h=300&fit=crop&crop=face" alt="Tiger" class="animal-img">
         </div>
-        <img src="https://images.unsplash.com/photo-1640622308146-b932d1139cd0?w=500&h=300&fit=crop" alt="Contract Address" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: auto; z-index: 20; border-radius: 15px; animation: pulse 2s ease-in-out infinite;">
+        <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/686c3dcfae5f50747f08e3c6_8383d56b967a22b%20(2).png" alt="Contract Address" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: auto; z-index: 20; border-radius: 15px; animation: pulse 2s ease-in-out infinite;">
         <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/6834b9c86afb796987e7d7e7_2429514_e59a3.gif" alt="Random" class="random-gif" style="width: 100px; height: 100px; top: 15%; left: 10%;">
         <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/6830afa3e60995d502452f9e_200w.gif" alt="Random" class="random-gif" style="width: 85px; height: 85px; bottom: 20%; right: 15%;">
         <div class="crypto-text">CA READY 🚀</div>
