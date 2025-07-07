@@ -92,9 +92,30 @@
             100% { transform: rotate(360deg) scale(1); }
         }
         
-        @keyframes chaos-bounce {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-30px) scale(1.2); }
+        .main-fox-image {
+            width: 300px;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 25;
+            animation: fox-drift 4s ease-in-out infinite;
+        }
+        
+        @keyframes fox-drift {
+            0%, 100% { 
+                transform: translate(-50%, -50%) rotate(0deg) scale(1);
+            }
+            25% { 
+                transform: translate(-55%, -45%) rotate(2deg) scale(1.05);
+            }
+            50% { 
+                transform: translate(-45%, -55%) rotate(-1deg) scale(0.95);
+            }
+            75% { 
+                transform: translate(-50%, -45%) rotate(1deg) scale(1.02);
+            }
         }
         
         .main-text {
@@ -263,6 +284,7 @@
         <div class="content-overlay">
             <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/686c398666d4caabad7c43d5_INFINIFOX-07-07-2025.png" alt="INFINIFOX" class="logo-image">
         </div>
+        <img src="https://cdn.prod.website-files.com/6740d85c4e3daeef29a89470/686c3bfae60f367991cee488_8383d56b967a22b%20(1).png" alt="Main Fox" class="main-fox-image">
         <div class="animal-container">
             <img src="PLACEHOLDER_ANIMAL_1" alt="Animal" class="animal-img">
         </div>
